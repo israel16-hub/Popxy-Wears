@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Popxy Wears - Premium Fashion Store</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="container">
+            <div class="nav-brand">
+                <h1>POPXY WEARS</h1>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#shop">Shop</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+            <div class="cart-icon" onclick="toggleCart()">
+                🛒 <span id="cart-count">0</span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="hero-content">
+            <h2>Welcome to Popxy Wears</h2>
+            <p>Discover Premium Fashion for Every Style</p>
+            <button class="btn btn-primary" onclick="scrollToShop()">Shop Now</button>
+        </div>
+    </section>
+
+    <!-- Shop Section -->
+    <section id="shop" class="shop">
+        <div class="container">
+            <h2>Our Collection</h2>
+            
+            <!-- Filter -->
+            <div class="filter-section">
+                <label for="category-filter">Filter by Category:</label>
+                <select id="category-filter" onchange="filterProducts()">
+                    <option value="all">All Products</option>
+                    <option value="tshirts">T-Shirts</option>
+                    <option value="tops">Tops</option>
+                    <option value="hats">Hats</option>
+                    <option value="glasses">Glasses</option>
+                    <option value="shoes">Shoes</option>
+                    <option value="watches">Watches</option>
+                    <option value="jewelry">Jewelry</option>
+                    <option value="trousers">Trousers</option>
+                    <option value="handbags">Handbags</option>
+                    <option value="backpacks">Backpacks</option>
+                </select>
+            </div>
+
+            <!-- Products Grid -->
+            <div class="products-grid" id="products-grid">
+                <!-- Products will be loaded here by JavaScript -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Cart Modal -->
+    <div id="cart-modal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="toggleCart()">&times;</span>
+            <h2>Shopping Cart</h2>
+            <div id="cart-items"></div>
+            <div class="cart-total">
+                <h3>Total: $<span id="total-price">0</span></h3>
+            </div>
+            <button class="btn btn-primary" onclick="checkout()">Proceed to Checkout</button>
+        </div>
+    </div>
+
+    <!-- Product Detail Modal -->
+    <div id="product-modal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeProductModal()">&times;</span>
+            <div id="product-detail"></div>
+        </div>
+    </div>
+
+    <!-- About Section -->
+    <section id="about" class="about">
+        <div class="container">
+            <h2>About Popxy Wears</h2>
+            <p>Popxy Wears is your ultimate destination for premium fashion clothing and accessories. We offer a curated collection of high-quality items including t-shirts, tops, hats, glasses, shoes, watches, jewelry, trousers, handbags, and backpacks. Our mission is to make quality fashion accessible to everyone.</p>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact">
+        <div class="container">
+            <h2>Contact Us</h2>
+            <form onsubmit="handleContactForm(event)">
+                <input type="text" placeholder="Your Name" required>
+                <input type="email" placeholder="Your Email" required>
+                <textarea placeholder="Your Message" rows="5" required></textarea>
+                <button type="submit" class="btn btn-primary">Send Message</button>
+            </form>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2026 Popxy Wears. All rights reserved.</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
